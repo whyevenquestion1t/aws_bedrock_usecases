@@ -1,0 +1,10 @@
+name_prefix                = "myteam-bedrock"
+region                      = "us-east-1"
+model_id                    = "anthropic.claude-3-5-haiku-20241022-v1:0"
+skip_destroy                = false
+timeout_duration_in_hours   = 24
+
+tags = {
+  Environment = "sandbox"
+  Owner       = "platform-team"
+}

@@ -1,0 +1,9 @@
+name_prefix = "myteam-bedrock"
+region      = "us-east-1"
+model_id    = "anthropic.claude-opus-4-5-20251101-v1:0"
+offer_type  = "PUBLIC"
+
+tags = {
+  Environment = "sandbox"
+  Owner       = "platform-team"
+}

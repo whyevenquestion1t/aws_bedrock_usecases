@@ -1,0 +1,17 @@
+name_prefix     = "myteam-bedrock"
+region          = "us-east-1"
+company_name    = "Acme Health Systems"
+company_website = "https://www.acmehealth.example.com"
+industry        = "Healthcare"
+intended_users  = "250"
+
+use_case_description = <<-EOT
+  - Summarizing internal clinical documentation for staff review
+  - Drafting patient communication templates for human review
+  - Not used for automated clinical decision-making
+EOT
+
+tags = {
+  Environment = "sandbox"
+  Owner       = "platform-team"
+}

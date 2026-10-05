@@ -1,0 +1,9 @@
+name_prefix  = "myteam-bedrock"
+region       = "us-east-1"
+model_id     = "amazon.nova-micro-v1:0"
+skip_destroy = true
+
+tags = {
+  Environment = "sandbox"
+  Owner       = "ml-platform-team"
+}

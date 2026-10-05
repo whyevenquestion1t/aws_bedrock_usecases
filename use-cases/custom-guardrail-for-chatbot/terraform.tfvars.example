@@ -1,0 +1,19 @@
+name_prefix    = "myteam-bedrock"
+region         = "us-east-1"
+guardrail_name = "support-chatbot-guardrail"
+
+denied_topics = [
+  {
+    name       = "competitor_discussion"
+    definition = "Questions asking the assistant to compare, recommend, or disparage named competitor products or companies."
+    examples   = ["What do you think of Acme's product?", "Is Acme better than you?"]
+  }
+]
+
+blocked_words    = ["internal-codename-x"]
+pii_entity_types = ["EMAIL", "US_SOCIAL_SECURITY_NUMBER", "PHONE"]
+
+tags = {
+  Environment = "sandbox"
+  Owner       = "platform-team"
+}

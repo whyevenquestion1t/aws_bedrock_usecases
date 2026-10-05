@@ -1,0 +1,39 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  terraform-validate:
+    name: fmt + validate (${{ matrix.use_case }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        use_case:
+          - model-access-agreement
+          - enterprise-model-access-request
+          - custom-guardrail-for-chatbot
+          - batch-inference-pipeline
+          - provisioned-throughput
+          - automated-model-evaluation
+    defaults:
+      run:
+        working-directory: use-cases/${{ matrix.use_case }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+
+      - name: terraform fmt -check
+        run: terraform fmt -check -recursive
+
+      - name: terraform init (no backend)
+        run: terraform init -backend=false
+
+      - name: terraform validate
+        run: terraform validate

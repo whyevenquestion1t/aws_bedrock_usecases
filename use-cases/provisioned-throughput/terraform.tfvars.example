@@ -1,0 +1,19 @@
+# --- Default, safe-to-experiment-with path: no-commitment throughput for a
+# --- custom model. Only this combination can be destroyed without an
+# --- early-termination penalty.
+name_prefix = "myteam-bedrock"
+region      = "us-east-1"
+model_arn   = "arn:aws:bedrock:us-east-1:111111111111:custom-model/example-custom-model"
+model_units = 1
+# commitment_duration left unset (null)
+
+# --- Alternate path: committed, discounted throughput for a base model.
+# --- Uncomment deliberately -- this bills for the FULL commitment term and
+# --- CANNOT be cancelled early. Do not uncomment unless you mean it.
+# model_arn           = "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2"
+# commitment_duration = "OneMonth"
+
+tags = {
+  Environment = "sandbox"
+  Owner       = "platform-team"
+}
